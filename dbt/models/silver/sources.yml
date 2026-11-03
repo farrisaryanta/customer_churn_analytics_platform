@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: airflow
+    schema: bronze
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_order_items
+      - name: raw_products

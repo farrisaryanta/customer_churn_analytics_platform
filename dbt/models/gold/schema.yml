@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: mart_customer_rfm
+    description: "Customer 360 data mart used as the primary input for Churn Prediction ML models."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        tests:
+          - unique
+          - not_null
+      
+      - name: is_churned
+        description: "Binary target variable for Machine Learning. 1 = Churned, 0 = Active."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+
+  - name: mart_daily_revenue
+    description: "Time-series aggregation of daily successful transactions and revenue."
+    columns:
+      - name: order_date
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_product_performance
+    description: "Product-level aggregations and their correlation with customer churn."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null

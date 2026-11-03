@@ -1,0 +1,9 @@
+__pycache__/
+*.pkl
+logs/
+data/
+.env
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/.user.yml
